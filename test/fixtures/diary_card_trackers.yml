@@ -1,0 +1,11 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  diary_card: one
+  tracker: one
+  score: 1
+
+two:
+  diary_card: two
+  tracker: two
+  score: 1

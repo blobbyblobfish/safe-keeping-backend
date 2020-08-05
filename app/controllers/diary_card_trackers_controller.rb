@@ -1,0 +1,2 @@
+class DiaryCardTrackersController < ApplicationController
+end
