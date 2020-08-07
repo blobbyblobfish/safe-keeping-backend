@@ -1,5 +1,5 @@
 class DiaryCardTrackerSerializer < ActiveModel::Serializer
-    attributes :score
+    attributes :id, :score
     belongs_to :tracker
   end
   
