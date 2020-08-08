@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_08_05_182330) do
+ActiveRecord::Schema.define(version: 2020_08_08_214521) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -34,6 +34,16 @@ ActiveRecord::Schema.define(version: 2020_08_05_182330) do
     t.index ["user_id"], name: "index_diary_cards_on_user_id"
   end
 
+  create_table "emergency_contacts", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.string "name"
+    t.string "phone_number"
+    t.boolean "professional"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_emergency_contacts_on_user_id"
+  end
+
   create_table "trackers", force: :cascade do |t|
     t.bigint "user_id", null: false
     t.string "name"
@@ -53,5 +63,6 @@ ActiveRecord::Schema.define(version: 2020_08_05_182330) do
   add_foreign_key "diary_card_trackers", "diary_cards"
   add_foreign_key "diary_card_trackers", "trackers"
   add_foreign_key "diary_cards", "users"
+  add_foreign_key "emergency_contacts", "users"
   add_foreign_key "trackers", "users"
 end
