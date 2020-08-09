@@ -24,7 +24,7 @@ class EmergencyContactsController < ApplicationController
     private
 
     def emergency_contact_params
-        params.require(:emergency_contact).permit(:name, :phone_number, :professional)
+        params.require(:emergency_contact).permit(:user_id, :name, :phone_number, :professional)
     end
 
 end
