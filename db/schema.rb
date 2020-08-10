@@ -10,10 +10,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_08_08_214521) do
+ActiveRecord::Schema.define(version: 2020_08_10_134932) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "coping_skills", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.string "name"
+    t.text "description"
+    t.text "directions"
+    t.integer "attempts"
+    t.integer "successful_attempts"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_coping_skills_on_user_id"
+  end
 
   create_table "diary_card_trackers", force: :cascade do |t|
     t.bigint "diary_card_id", null: false
@@ -60,6 +72,7 @@ ActiveRecord::Schema.define(version: 2020_08_08_214521) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  add_foreign_key "coping_skills", "users"
   add_foreign_key "diary_card_trackers", "diary_cards"
   add_foreign_key "diary_card_trackers", "trackers"
   add_foreign_key "diary_cards", "users"
