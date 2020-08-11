@@ -17,6 +17,8 @@ gem 'puma', '~> 4.1'
 gem 'bcrypt', '~> 3.1.7'
 # Use Active Model Serializer
 gem 'active_model_serializers'
+# Use JSON Web Tokens
+gem 'jwt'
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'

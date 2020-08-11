@@ -5,7 +5,12 @@ Rails.application.routes.draw do
   # resources :diary_card_trackers
   # resources :emergency_contacts
   
+  get '/users', to: 'users#index'
   get '/users/:id', to: 'users#show'
+  post '/users', to: 'users#create'
+  post '/users/login', to: 'users#login'
+  patch '/users/:id', to: 'users#update'
+  delete '/users/:id', to: 'users#destroy'
 
   post '/coping_skills', to: 'coping_skills#create'
   patch '/coping_skills/:id', to: 'coping_skills#update'
