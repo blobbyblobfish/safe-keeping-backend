@@ -15,7 +15,16 @@ class DiaryCardsController < ApplicationController
     end
 
     def update
+        # Update tracker
+        @dct_id = params[:diary_card_tracker_id]
+        @diary_card_tracker = DiaryCardTracker.find(@dct_id)
+
+        @diary_card_tracker.update({score: params[:score]})
+        
+        #Update diary card
         @diary_card.update(diary_card_params)
+
+        #render whole json
         render json: @diary_card
     end
 

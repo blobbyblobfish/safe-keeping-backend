@@ -10,20 +10,6 @@ class DiaryCardTrackersController < ApplicationController
         render json: @diary_card
     end
 
-    def update
-        @diary_card_tracker = DiaryCardTracker.find(params[:id])
-        
-        @diary_card_tracker.update(diary_card_tracker_params)
-
-        
-
-        @diary_card_id = params[:diary_card_id]
-        @diary_card = DiaryCard.find(@diary_card_id)
-
-        # Render whole Diary Card json to update state on frontend
-        render json: @diary_card
-    end
-
     private
 
     def diary_card_tracker_params

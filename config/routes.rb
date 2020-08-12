@@ -21,8 +21,6 @@ Rails.application.routes.draw do
   delete '/diary_cards/:id', to: 'diary_cards#destroy'
 
   post '/diary_card_trackers', to: 'diary_card_trackers#create'
-  patch '/diary_card_trackers/:id', to: 'diary_card_trackers#update'
-  delete '/diary_card_trackers/:id', to: 'diary_card_trackers#destroy'
 
   post '/emergency_contacts', to: 'emergency_contacts#create'
   patch '/emergency_contacts/:id', to: 'emergency_contacts#update'
