@@ -34,7 +34,7 @@ class DiaryCardsController < ApplicationController
     private
 
     def diary_card_params
-        params.require(:diary_card).permit(:user_id, :thoughts, :feelings)
+        params.require(:diary_card).permit(:user_id, :entry_timestamp, :thoughts, :feelings)
     end
     
 end
