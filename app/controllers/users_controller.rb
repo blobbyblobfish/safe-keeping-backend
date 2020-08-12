@@ -13,13 +13,13 @@ class UsersController < ApplicationController
     def create
         @user = User.create(create_user_params)
 
-        # Seed users with initial tracker and coping skills
-        Tracker.create(user: @user, name: "Mood")
-        CopingSkill.create(user: @user, name: "Test", description: "Lorem ipsum...", directions: "Step 1, 2, 3.", attempts: 0, successful_attempts: 0)
-
         if @user.valid?
             token = encode_token({user_id: @user.id})
-
+            
+            # Seed users with initial tracker and coping skills
+            Tracker.create(user: @user, name: "Mood")
+            CopingSkill.create(user: @user, name: "Placeholder", description: "Lorem ipsum...", directions: "Step 1, 2, 3.", attempts: 0, successful_attempts: 0)
+            
             render json: {
                 user: UserSerializer.new(@user),
                 token: token

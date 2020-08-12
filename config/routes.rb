@@ -16,7 +16,7 @@ Rails.application.routes.draw do
   patch '/coping_skills/:id', to: 'coping_skills#update'
   delete '/coping_skills/:id', to: 'coping_skills#destroy'
 
-  # post '/diary_cards', to: 'diary_cards#create'
+  post '/diary_cards', to: 'diary_cards#create'
   patch '/diary_cards/:id', to: 'diary_cards#update'
   delete '/diary_cards/:id', to: 'diary_cards#destroy'
 
