@@ -27,14 +27,14 @@ class UsersController < ApplicationController
             skills = [{
                 name: "Mindfulness",
                 description: "Mindfulness means maintaining a moment-by-moment awareness of our thoughts, feelings, bodily sensations, and surrounding environment, without judgment.",
-                directions: "Step 1: Take a deep breath and start to relax. Step 2: Close your eyes and drop all of your concerns. Step 3: Bring whole of the awareness into breathing."
+                directions: "Step 1: Take a deep breath and start to relax. \n\nStep 2: Close your eyes and drop all of your concerns. \n\nStep 3: Bring whole of the awareness into breathing."
             }, {
                 name: "Take A Break",
                 description: "A change of scene or a change of pace is good for your mental health",
                 directions: "Write up a list of helpful breaks or distractions. These can be any activity you enjoy doing, such as going for a walk, making a cup of tea, or doing nothing."
             }, {
                 name: "Ask For Help",
-                description: "Talking about your problems so that you can gain support, develop a solution, or see a problem in a different way can be healthy.",
+                description: "It can be healthy to talk about your problems so that you can gain support, develop a solution, or see a problem in a different way.",
                 directions: "Have a conversation with a friend or a professional who you feel comfortable going to for listening and guidance."
             }]
             
