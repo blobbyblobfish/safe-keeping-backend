@@ -18,7 +18,27 @@ class UsersController < ApplicationController
             
             # Seed users with initial tracker and coping skills
             Tracker.create(user: @user, name: "Mood")
-            CopingSkill.create(user: @user, name: "Placeholder", description: "Lorem ipsum...", directions: "Step 1, 2, 3.", attempts: 0, successful_attempts: 0)
+
+            # Text taken from various sources
+            # Ask for support: https://www.verywellmind.com/forty-healthy-coping-skills-4586742
+            # Mindfulness description: https://healthcenter.gwu.edu/sites/g/files/zaxdzs1216/f/downloads/Mindfulness.pdf
+            # Mindfulness steps: https://happyproject.in/mindfulness-7-steps/
+            # Take a break: https://www.mentalhealth.org.uk/your-mental-health/looking-after-your-mental-health/take-break#:~:text=A%20change%20of%20scene%20or,enough%20to%20de%2Dstress%20you.
+            skills = [{
+                name: "Mindfulness",
+                description: "Mindfulness means maintaining a moment-by-moment awareness of our thoughts, feelings, bodily sensations, and surrounding environment, without judgment.",
+                directions: "Step 1: Take a deep breath and start to relax. Step 2: Close your eyes and drop all of your concerns. Step 3: Bring whole of the awareness into breathing."
+            }, {
+                name: "Take A Break",
+                description: "A change of scene or a change of pace is good for your mental health",
+                directions: "Write up a list of helpful breaks or distractions. These can be any activity you enjoy doing, such as going for a walk, making a cup of tea, or doing nothing."
+            }, {
+                name: "Ask For Help",
+                description: "Talking about your problems so that you can gain support, develop a solution, or see a problem in a different way can be healthy.",
+                directions: "Have a conversation with a friend or a professional who you feel comfortable going to for listening and guidance."
+            }]
+            
+            skills.each {|s| CopingSkill.create(user: @user, name: s[:name], description: s[:description], directions: s[:directions], attempts: 0, successful_attempts: 0)}
             
             render json: {
                 user: UserSerializer.new(@user),
