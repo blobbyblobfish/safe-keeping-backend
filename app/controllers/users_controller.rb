@@ -26,11 +26,11 @@ class UsersController < ApplicationController
             # Take a break: https://www.mentalhealth.org.uk/your-mental-health/looking-after-your-mental-health/take-break#:~:text=A%20change%20of%20scene%20or,enough%20to%20de%2Dstress%20you.
             skills = [{
                 name: "Mindfulness",
-                description: "Mindfulness means maintaining a moment-by-moment awareness of our thoughts, feelings, bodily sensations, and surrounding environment, without judgment.",
-                directions: "Step 1: Take a deep breath and start to relax. \n\nStep 2: Close your eyes and drop all of your concerns. \n\nStep 3: Bring whole of the awareness into breathing."
+                description: "Mindfulness means maintaining a moment to moment awareness without judgment.",
+                directions: "Take a deep breath and start to relax. Bring the whole of your awareness into your breathing. Watch thoughts and feelings arise and pass. Try this while sitting, eating, and walking."
             }, {
                 name: "Take A Break",
-                description: "A change of scene or a change of pace is good for your mental health",
+                description: "A change of scene or a change of pace is good for your mental health.",
                 directions: "Write up a list of helpful breaks or distractions. These can be any activity you enjoy doing, such as going for a walk, making a cup of tea, or doing nothing."
             }, {
                 name: "Ask For Help",
