@@ -16,10 +16,12 @@ class DiaryCardsController < ApplicationController
 
     def update
         # Update tracker
-        @dct_id = params[:diary_card_tracker_id]
-        @diary_card_tracker = DiaryCardTracker.find(@dct_id)
+        if params[:diary_card_id]
+            @dct_id = params[:diary_card_tracker_id]
+            @diary_card_tracker = DiaryCardTracker.find(@dct_id)
 
-        @diary_card_tracker.update({score: params[:score]})
+            @diary_card_tracker.update({score: params[:score]})
+        end
         
         #Update diary card
         @diary_card.update(diary_card_params)
