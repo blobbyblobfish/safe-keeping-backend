@@ -1,9 +1,6 @@
 Rails.application.routes.draw do
-  # resources :trackers
-  # resources :coping_skills
-  # resources :diary_cards
-  # resources :diary_card_trackers
-  # resources :emergency_contacts
+  resources :user_therapists
+  resources :therapists
   
   get '/users', to: 'users#index'
   get '/users/:id', to: 'users#show'

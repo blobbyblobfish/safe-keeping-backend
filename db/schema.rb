@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_08_12_043548) do
+ActiveRecord::Schema.define(version: 2020_08_14_145030) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -57,12 +57,29 @@ ActiveRecord::Schema.define(version: 2020_08_12_043548) do
     t.index ["user_id"], name: "index_emergency_contacts_on_user_id"
   end
 
+  create_table "therapists", force: :cascade do |t|
+    t.string "name"
+    t.string "email"
+    t.string "password_digest"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
   create_table "trackers", force: :cascade do |t|
     t.bigint "user_id", null: false
     t.string "name"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["user_id"], name: "index_trackers_on_user_id"
+  end
+
+  create_table "user_therapists", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.bigint "therapist_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["therapist_id"], name: "index_user_therapists_on_therapist_id"
+    t.index ["user_id"], name: "index_user_therapists_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -79,4 +96,6 @@ ActiveRecord::Schema.define(version: 2020_08_12_043548) do
   add_foreign_key "diary_cards", "users"
   add_foreign_key "emergency_contacts", "users"
   add_foreign_key "trackers", "users"
+  add_foreign_key "user_therapists", "therapists"
+  add_foreign_key "user_therapists", "users"
 end
