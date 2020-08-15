@@ -1,13 +1,22 @@
 Rails.application.routes.draw do
-  resources :user_therapists
-  resources :therapists
+
+  # resources :user_therapists
   
-  get '/users', to: 'users#index'
+  # get '/users', to: 'users#index'
   get '/users/:id', to: 'users#show'
   post '/users', to: 'users#create'
   post '/users/login', to: 'users#login'
   patch '/users/:id', to: 'users#update'
   delete '/users/:id', to: 'users#destroy'
+
+  post '/user_therapists', to: 'user_therapists#create'
+
+  get '/therapists', to: 'therapists#index'
+  get '/therapists/:id', to: 'therapists#show'
+  post '/therapists', to: 'therapists#create'
+  post '/therapists/login', to: 'therapists#login'
+  patch '/therapists/:id', to: 'therapists#update'
+  delete '/therapists/:id', to: 'therapists#destroy'
 
   post '/coping_skills', to: 'coping_skills#create'
   patch '/coping_skills/:id', to: 'coping_skills#update'
