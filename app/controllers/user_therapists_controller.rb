@@ -11,6 +11,13 @@ class UserTherapistsController < ApplicationController
         render json: @user_therapist
     end
 
-    private
+    def destroy
+        #Update to allow users to have multiple therapists
+        @user_therapist = UserTherapist.find_by(user_id: params[:user_id])
+        
+        @user_therapist.destroy()
+
+        render json: @user_therapist
+    end
 
 end

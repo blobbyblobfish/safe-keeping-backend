@@ -10,8 +10,9 @@ Rails.application.routes.draw do
   delete '/users/:id', to: 'users#destroy'
 
   post '/user_therapists', to: 'user_therapists#create'
+  delete '/user_therapists', to: 'user_therapists#destroy'
 
-  get '/therapists', to: 'therapists#index'
+  # get '/therapists', to: 'therapists#index'
   get '/therapists/:id', to: 'therapists#show'
   post '/therapists', to: 'therapists#create'
   post '/therapists/login', to: 'therapists#login'
