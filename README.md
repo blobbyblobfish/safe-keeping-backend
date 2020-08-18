@@ -13,9 +13,9 @@ Users can add therapists who can view their progress through the companion web a
 
 ### Installation
 ###### First clone the frontend(s) and backend.
-- You are reading this on the mobile frontend README.
+- [Link to mobile frontend](https://github.com/blobbyblobfish/safe-keeping-frontend-mobile)
 - [Link to web frontend](https://github.com/blobbyblobfish/safe-keeping-frontend-web)
-- [Link to backend](https://github.com/blobbyblobfish/safe-keeping-backend)
+- You are reading this on the backend README.
 
 ###### Commands
 1. Run `bundle install` in the backend directory. Run `rails db:migrate`.
