@@ -19,6 +19,8 @@ gem 'bcrypt', '~> 3.1.7'
 gem 'active_model_serializers'
 # Use JSON Web Tokens
 gem 'jwt'
+# Use dotenv
+gem 'dotenv-rails'
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
