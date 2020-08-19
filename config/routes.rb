@@ -2,7 +2,7 @@ Rails.application.routes.draw do
 
   # resources :user_therapists
   
-  # get '/users', to: 'users#index'
+  get '/users', to: 'users#index'
   get '/users/:id', to: 'users#show'
   post '/users', to: 'users#create'
   post '/users/login', to: 'users#login'
@@ -12,7 +12,7 @@ Rails.application.routes.draw do
   post '/user_therapists', to: 'user_therapists#create'
   delete '/user_therapists', to: 'user_therapists#destroy'
 
-  # get '/therapists', to: 'therapists#index'
+  get '/therapists', to: 'therapists#index'
   get '/therapists/:id', to: 'therapists#show'
   post '/therapists', to: 'therapists#create'
   post '/therapists/login', to: 'therapists#login'
