@@ -14,8 +14,6 @@ class UserTherapistsController < ApplicationController
     def destroy
         # ** TO DO** Update to allow users to have multiple therapists
         @user_therapist = UserTherapist.find_by(user_id: params[:user_id])
-
-        byebug
         
         @user_therapist.destroy()
 
